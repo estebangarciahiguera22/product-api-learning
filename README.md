@@ -45,13 +45,13 @@ The project evolves step by step from a simple CRUD implementation to a more pro
 
 All endpoints return a standardized response structure:
 
-```json
+//```json
 {
   "success": true,
   "message": "Operation completed successfully",
   "data": {}
 }
-
+//
 ------------------------------------------------------
 
 ## 🧠 Key Concepts Learned

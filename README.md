@@ -58,12 +58,14 @@ All endpoints return a standardized response structure:
 
 ## 🧠 Key Concepts Learned
 
-- REST API design
-- Layered architecture
-- Separation of concerns
-- Dependency Injection
-- DTO pattern
-- Clean code practices
+- Layered Architecture
+- Separation of Concerns
+- DTO Pattern
+- Service Layer Pattern
+- Standardized API Responses
+- object mapping with AutoMapper
+- standardized API responses
+- validation-driven business rules
 
 -----------------------------------------------------
 
@@ -72,6 +74,8 @@ All endpoints return a standardized response structure:
 - ASP.NET Core Web API
 - C#
 - Swagger (API testing)
+- AutoMapper (object mapping)
+- Built-in Dependency Injection
 
 -----------------------------------------------------
 

@@ -32,6 +32,28 @@ The project evolves step by step from a simple CRUD implementation to a more pro
 
 -----------------------------------------------------
 
+
+### 🔹 Version 5 - Added AutoMapper and Response Wrapper
+- RESTful CRUD endpoints
+- Service Layer for business logic
+- DTOs for request and response handling
+- AutoMapper for object transformation
+- Standard API response wrapper
+- Swagger for API testing and documentation
+
+## Additionally Standard API Response Format
+
+All endpoints return a standardized response structure:
+
+```json
+{
+  "success": true,
+  "message": "Operation completed successfully",
+  "data": {}
+}
+
+------------------------------------------------------
+
 ## 🧠 Key Concepts Learned
 
 - REST API design
@@ -66,8 +88,10 @@ The project evolves step by step from a simple CRUD implementation to a more pro
 -----------------------------------------------------
 
 ## 📈 Future Improvements
+## Next Technical Goals
 
-- Database integration (Entity Framework)
-- Authentication & Authorization (JWT)
-- Logging and middleware
-- Unit testing
+- Entity Framework Core integration
+- database persistence
+- authentication and authorization with JWT
+- global exception handling
+- unit testing

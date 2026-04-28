@@ -41,6 +41,18 @@ The project evolves step by step from a simple CRUD implementation to a more pro
 - Standard API response wrapper
 - Swagger for API testing and documentation
 
+----------------------------------------------------
+
+### 🚀 Version 6 - Database Integration (Entity Framework Core)
+- Integrated Entity Framework Core
+- SQLite database persistence
+- Migrations for database versioning
+- DbContext configuration
+- Full CRUD operations connected to real database
+- Business rule validation (e.g., price must be greater than zero)
+- Improved service layer with real data handling
+
+
 ## Additionally Standard API Response Format
 
 All endpoints return a standardized response structure:
@@ -62,10 +74,11 @@ All endpoints return a standardized response structure:
 - Separation of Concerns
 - DTO Pattern
 - Service Layer Pattern
+- Entity Framework Core (ORM)
+- Database Migrations
 - Standardized API Responses
-- object mapping with AutoMapper
-- standardized API responses
-- validation-driven business rules
+- Object Mapping with AutoMapper
+- Validation-driven business rules
 
 -----------------------------------------------------
 
@@ -73,6 +86,8 @@ All endpoints return a standardized response structure:
 
 - ASP.NET Core Web API
 - C#
+- Entity Framework Core
+- SQLite
 - Swagger (API testing)
 - AutoMapper (object mapping)
 - Built-in Dependency Injection
@@ -83,7 +98,8 @@ All endpoints return a standardized response structure:
 
 1. Open the solution in Visual Studio
 2. Run the project
-3. Open Swagger UI: https://localhost:44356/swagger/index.html
+3. The database will be created automatically via migrations
+    Open Swagger UI: https://localhost:44356/swagger/index.html
 
 
 -----------------------------------------------------
@@ -96,8 +112,9 @@ All endpoints return a standardized response structure:
 ## 📈 Future Improvements
 ## Next Technical Goals
 
-- Entity Framework Core integration
-- database persistence
-- authentication and authorization with JWT
-- global exception handling
-- unit testing
+- Async/Await implementation for all database operations
+- Global exception handling (Middleware)
+- Authentication and authorization with JWT
+- Logging (Serilog)
+- Unit testing
+- PostgreSQL integration

@@ -3,6 +3,8 @@
 This repository documents my learning journey building a RESTful API using ASP.NET Core.
 The project evolves step by step from a simple CRUD implementation to a more professional layered architecture.
 
+-----------------------------------------------------
+
 ## 🚀 Project Evolution
 ### 🔹 Version 1 - Basic CRUD
 - Simple in-memory data handling
@@ -43,7 +45,7 @@ The project evolves step by step from a simple CRUD implementation to a more pro
 
 ----------------------------------------------------
 
-### 🚀 Version 6 - Database Integration (Entity Framework Core)
+### 🔹 Version 6 - Database Integration (Entity Framework Core)
 - Integrated Entity Framework Core
 - SQLite database persistence
 - Migrations for database versioning
@@ -52,6 +54,16 @@ The project evolves step by step from a simple CRUD implementation to a more pro
 - Business rule validation (e.g., price must be greater than zero)
 - Improved service layer with real data handling
 
+----------------------------------------------------
+
+### ⚡ Version 7 - Async/Await Scalability Upgrade
+- Converted database operations to async/await
+- Implemented non-blocking Entity Framework Core queries
+- Replaced synchronous methods with asynchronous service methods
+- Improved backend scalability and performance under concurrent requests
+- Applied modern ASP.NET Core backend best practices
+
+----------------------------------------------------
 
 ## Additionally Standard API Response Format
 
@@ -79,6 +91,9 @@ All endpoints return a standardized response structure:
 - Standardized API Responses
 - Object Mapping with AutoMapper
 - Validation-driven business rules
+- Async/Await programming
+- Non-blocking database operations
+- Scalable backend request handling
 
 -----------------------------------------------------
 
@@ -112,7 +127,6 @@ All endpoints return a standardized response structure:
 ## 📈 Future Improvements
 ## Next Technical Goals
 
-- Async/Await implementation for all database operations
 - Global exception handling (Middleware)
 - Authentication and authorization with JWT
 - Logging (Serilog)

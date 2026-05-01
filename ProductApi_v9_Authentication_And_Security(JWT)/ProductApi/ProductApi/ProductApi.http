@@ -1,0 +1,24 @@
+@ProductApi_HostAddress = https://localhost:44356
+
+### GET TEST
+GET {{ProductApi_HostAddress}}/weatherforecast
+Accept: application/json
+
+###
+
+### LOGIN
+POST {{ProductApi_HostAddress}}/api/Auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "1234"
+}
+
+###
+
+### GET PROTECTED
+GET {{ProductApi_HostAddress}}/api/Product
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWRtaW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsImV4cCI6MTc3NzU3NTYwNSwiaXNzIjoiUHJvZHVjdEFwaSIsImF1ZCI6IlByb2R1Y3RBcGlVc2VycyJ9.B1Ug6-U2QSFK7qxte0qFjKNP3UZ30tB_3Y0zR-kBHu0
+
+###

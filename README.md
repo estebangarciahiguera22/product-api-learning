@@ -56,12 +56,62 @@ The project evolves step by step from a simple CRUD implementation to a more pro
 
 ----------------------------------------------------
 
-### ⚡ Version 7 - Async/Await Scalability Upgrade
+### 🔹 Version 7 - Async/Await Scalability Upgrade
 - Converted database operations to async/await
 - Implemented non-blocking Entity Framework Core queries
 - Replaced synchronous methods with asynchronous service methods
 - Improved backend scalability and performance under concurrent requests
 - Applied modern ASP.NET Core backend best practices
+
+----------------------------------------------------
+### 📦 Version 8 - Clean Architecture & Response Standardization
+
+This version focused on improving code structure, maintainability, and consistency across the API responses.
+
+Instead of returning raw data directly from controllers, a standardized response format and cleaner architecture were implemented to simulate real-world backend practices.
+
+#### 🔹 Version 8.0 - Service Layer Implementation
+- Introduced a service layer to separate business logic from controllers
+- Controllers now delegate logic to services
+- Improved code readability and maintainability
+- Implemented custom exception classes (BadRequest, NotFound)
+- Added global exception middleware
+- Centralized error handling for cleaner controllers
+- Consistent error responses across the API
+- Created a generic `ApiResponse<T>` wrapper
+- Unified success and error response structure
+- Included fields like:
+  - success
+  - message
+  - data
+- Improved API consistency for frontend integration
+
+----------------------------------------------------
+
+### 🔐 Version 9 - Authentication & Security Module
+
+This version was divided into smaller sub-versions because authentication and security include multiple professional backend concepts that were implemented progressively.
+
+Instead of treating JWT, roles, database users, and password hashing as isolated features, they were grouped under Version 9 as part of the same security module.
+
+#### 🔹 Version 9.0 - JWT Authentication
+- Implemented JWT token generation
+- Added login endpoint
+- Configured JWT authentication in ASP.NET Core
+- Protected API endpoints using bearer tokens
+
+#### 🔹 Version 9.1 - Role-Based Authorization
+- Added role claims to JWT tokens
+- Implemented Admin and User roles
+- Restricted sensitive endpoints to Admin users
+- Verified authorization behavior with 401 Unauthorized and 403 Forbidden responses
+
+#### 🔹 Version 9.2 - User Registration & Password Hashing
+- Added user registration endpoint
+- Stored users in the database
+- Implemented password hashing with BCrypt
+- Updated login to validate hashed passwords
+- Improved authentication security following backend best practices
 
 ----------------------------------------------------
 
@@ -76,7 +126,6 @@ All endpoints return a standardized response structure:
   "data": {}
 }
 //
-
 
 ------------------------------------------------------
 
@@ -94,6 +143,18 @@ All endpoints return a standardized response structure:
 - Async/Await programming
 - Non-blocking database operations
 - Scalable backend request handling
+- Layered architecture (Controller → Service)
+- Separation of concerns
+- Global exception handling with middleware
+- Custom exception design
+- Standardized API responses
+- Clean and maintainable backend structure
+- JWT Authentication
+- Role-Based Authorization
+- Claims-based security
+- Password hashing with BCrypt
+- User registration and login flow
+- Authentication using database persistence
 
 -----------------------------------------------------
 
@@ -106,6 +167,8 @@ All endpoints return a standardized response structure:
 - Swagger (API testing)
 - AutoMapper (object mapping)
 - Built-in Dependency Injection
+- JWT Bearer Authentication
+- BCrypt.Net-Next
 
 -----------------------------------------------------
 
@@ -127,8 +190,6 @@ All endpoints return a standardized response structure:
 ## 📈 Future Improvements
 ## Next Technical Goals
 
-- Global exception handling (Middleware)
-- Authentication and authorization with JWT
 - Logging (Serilog)
 - Unit testing
 - PostgreSQL integration

@@ -94,6 +94,14 @@ This version was divided into smaller sub-versions because authentication and se
 
 Instead of treating JWT, roles, database users, and password hashing as isolated features, they were grouped under Version 9 as part of the same security module.
 
+The authentication module is divided into subversions to show the progressive implementation of security features:
+
+- V9.0: JWT Authentication
+- V9.1: Role-Based Authorization
+- V9.2: Register endpoint and password hashing
+
+Each folder contains a working version of the project at that stage.
+
 #### 🔹 Version 9.0 - JWT Authentication
 - Implemented JWT token generation
 - Added login endpoint

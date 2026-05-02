@@ -1,0 +1,16 @@
+2026-05-02 18:16:41.339 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u")
+2026-05-02 18:16:41.632 +02:00 [INF] User profile is available. Using 'C:\Users\esteb\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-02 18:16:41.961 +02:00 [INF] Request starting HTTP/2 GET https://localhost:44356/ - null null
+2026-05-02 18:16:42.880 +02:00 [INF] Request finished HTTP/2 GET https://localhost:44356/ - 404 null null 930.9155ms
+2026-05-02 18:16:42.888 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44356/, Response status code: 404
+2026-05-02 18:16:44.632 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:44356/api/Auth/login - application/json 59
+2026-05-02 18:16:44.644 +02:00 [INF] Executing endpoint 'ProductApi.Controllers.AuthController.Login (ProductApi)'
+2026-05-02 18:16:44.765 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(ProductApi.DTOs.LoginDTO) on controller ProductApi.Controllers.AuthController (ProductApi).
+2026-05-02 18:16:45.049 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@loginDto_Username='?' (Size = 5)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Username" = @loginDto_Username
+LIMIT 1

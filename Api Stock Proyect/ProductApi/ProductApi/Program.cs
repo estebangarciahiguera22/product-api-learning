@@ -7,8 +7,15 @@ using ProductApi.Middleware;
 using ProductApi.Models;
 using ProductApi.Services;
 using System.Text;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/productapi-log-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+
+builder.Host.UseSerilog();
 
 // Services
 builder.Services.AddControllers();

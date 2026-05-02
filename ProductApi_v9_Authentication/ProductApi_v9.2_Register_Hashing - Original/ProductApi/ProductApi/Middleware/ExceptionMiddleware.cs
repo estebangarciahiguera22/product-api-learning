@@ -1,8 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
-using ProductApi.Exceptions;
 using ProductApi.Responses;
-using Serilog;
+using ProductApi.Exceptions;
 
 namespace ProductApi.Middleware
 {
@@ -23,8 +22,6 @@ namespace ProductApi.Middleware
             }
             catch (Exception ex)
             {
-                Log.Error(ex, "An unhandled exception occurred while processing the request");
-
                 await HandleExceptionAsync(context, ex);
             }
         }
@@ -32,7 +29,6 @@ namespace ProductApi.Middleware
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             context.Response.ContentType = "application/json";
-
             context.Response.StatusCode = exception switch
             {
                 NotFoundException => (int)HttpStatusCode.NotFound,
@@ -40,17 +36,10 @@ namespace ProductApi.Middleware
                 _ => (int)HttpStatusCode.InternalServerError
             };
 
-            var message = exception switch
-            {
-                NotFoundException => exception.Message,
-                BadRequestException => exception.Message,
-                _ => "An unexpected error occurred"
-            };
-
             var response = new ApiResponse<string>
             {
                 Success = false,
-                Message = message,
+                Message = exception.Message,
                 Data = null
             };
 
